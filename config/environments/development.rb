@@ -6,6 +6,9 @@ Rails.application.configure do
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
 
+  # Using the Amazon S3 settings for Active Storage
+  config.active_storage.service = :amazon
+
   # Do not eager load code on boot.
   config.eager_load = false
 
@@ -56,4 +59,7 @@ Rails.application.configure do
   config.generators do |g|
     g.test_framework nil
   end
+
+  # Store files locally.
+  config.active_storage.service = :local
 end
